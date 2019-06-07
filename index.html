@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Rock Paper Scissors</title>
+</head>
+
+<body>
+	<script>
+		function computerPlay() {
+			let options = ['Rock', 'Paper', 'Scissors'];
+			let choice = Math.floor(Math.random() * 3) + 1);
+		return options[choice];
+
+		}
+
+		function playRound(playerSelection, computerSelection) {
+			p = numChoice(playerSelection.toLowerCase());
+			c = numChoice(computerSelection.toLocaleLowerCase());
+
+			if (p > c && p != 3) {
+				outcome = "Win";
+				occurance = playerSelection + ' beats ' + computerSelection;
+			else if( p == c){
+				alert("Draw! Try Again!")
+				playround(playerSelection, computerSelection)
+			}
+			} else {
+				outcome = "Lose";
+				occurance = computerSelection + ' beats ' + playerSelection;
+			}
+
+			alert("You " + outcome + '!' + occurance);
+		}
+
+		function numChoice(word) {
+			let d = {
+				'rock': 1,
+				'paper': 2,
+				'scissors': 3
+			};
+			
+			if (word in d){
+				return d[word];
+			}
+			
+			else{
+				return 4;
+			}
+
+		}
+			
+		function game() {
+			playerSelection = askPlayer();
+			playRound(playerSelection, computerPlay())
+		}
+		
+		function askPlayer(){
+			playerSelection = prompt('Choose Rock, Paper, or Scissors');
+			if numChoice(playerSelection.toLowerCase = 4)
+				{
+					alert('please enter a valid selection');
+					return askPlayer();
+				}
+			else{
+				return playerSelection
+			}
+		}
+	</script>
+</body>
+
+</html>
