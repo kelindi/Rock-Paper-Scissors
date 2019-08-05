@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+let s = 'let the games begin!'
 
 
 function getRandomint(min, max) {
@@ -9,7 +10,6 @@ function getRandomint(min, max) {
 }
 
 function compareChoice(pChoice, cChoice) {
-    let s;
     switch (pChoice) {
         case cChoice:
             s = "It's a Tie!";
@@ -72,12 +72,13 @@ window.onload = function(){
     var activeGame = document.querySelectorAll('.activeGame');
     const choices = document.querySelectorAll('.choice');
     var score = document.querySelector('#score')
-
+    var reset = document.querySelector('#reset')
+    var status = document.querySelector('#status')
 
     startBtn.addEventListener('click',()=>{
         startBtn.classList.toggle('visible'); // remove start button from window
         activeGame.forEach(function(element){ element.classList.toggle('visible')}); // show game elements
-        updateScore();
+        update();
     });
 
     choices.forEach((choice) => {
@@ -85,12 +86,19 @@ window.onload = function(){
         // and for each one we add a 'click' listener
         choice.addEventListener('click', (e) => {
             playRound(choice.id);
-            updateScore();
+            update();
+
         });
       });
-    function updateScore() {
-        score.textContent = (`You - ${playerScore} Computer - ${computerScore}`);
+    function update() {
+        score.textContent = (`${playerScore} - ${computerScore}`);
+        status.textContent =(s);
     }
+    
+    reset.addEventListener('click',()=>{
+        resetScore();
+        update();
+    })
     function resetScore(){
         playerScore = 0;
         computerScore = 0;
