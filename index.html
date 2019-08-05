@@ -3,88 +3,18 @@
 
 <head>
 	<title>Rock Paper Scissors</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<script>
-
-		function getRandomint(min, max) {
-			min = Math.ceil(min);
-			max = Math.floor(max);
-			return Math.floor(Math.random() * (max - min + 1)) + min;
-		}
-
-		function compareChoice(pChoice, cChoice) {
-			let s;
-			switch (pChoice) {
-				case cChoice:
-					s = "It's a Tie!";
-					break;
-				case 'rock':
-					if (computerChoice == 'paper') {
-						s = "You Lose! Paper beats Rock";
-					}
-					else {
-						s = " You Win! Rock beats Scissors";
-					}
-					break;
-				case 'paper':
-					if (computerChoice == 'scissors') {
-						s = "You Lose! Scissors beats Paper";
-					}
-					else {
-						s = "You Win! Paper beats Rock";
-					}
-					break;
-				case 'scissors':
-					if (computerChoice == 'rock') {
-						s = "You Lose! Rock beats Scissors";
-					}
-					else {
-						s = "You Win! Paper beats Rock";
-					}
-					break;
-			}
-			return s;
-		}
-		function computerPlay() {
-			let options = ['rock', 'paper', 'scissors'];
-			return options[getRandomint(0, 2)];
-		}
-
-		function playRound() {
-			
-			let playerChoice = prompt('Please choose Rock,Paper,or Scissors');
-			playerChoice = playerChoice.toLowerCase();
-			computerChoice = computerPlay();
-			statememt = compareChoice(playerChoice, computerChoice);
-			return statememt
-
-		}
-
-
-		function game() {
-			let i = 5;
-			let playerScore = 0;
-			let computerScore = 0;
-			while (i > 0) {
-				let x = playRound();
-				if (x.includes('Win')) {
-					playerScore += 1;
-				}
-				else {
-					computerScore += 1;
-				}
-				i -= 1;
-			}
-			if (playerScore > computerScore) {
-				return "You Win the Match!";
-			}
-			else {
-				return "You Lose the Match! :(";
-			}
-		}
+	<script src="main.js">
 	</script>
+	<div class="visible activeGame"id="score"></div>
+	<button id="start">Start Game</button>
+	<button class="visible activeGame choice" id="rock">Rock</button>
+	<button class="visible activeGame choice" id="paper">Paper</button>
+	<button class="visible activeGame choice" id="scissors">Scissors</button>
+
 </body>
 
 </html>
