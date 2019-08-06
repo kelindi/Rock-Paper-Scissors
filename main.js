@@ -102,6 +102,7 @@ window.onload = function(){
     function resetScore(){
         playerScore = 0;
         computerScore = 0;
+        s = "Score reset!"
     }
 }
 
