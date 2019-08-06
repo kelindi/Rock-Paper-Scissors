@@ -64,6 +64,20 @@ button:active{
 }
 
 body{
-    margin-top: 200px;
-    margin-bottom: 1/2fr;
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
+
+#title{
+    display: flex;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font: 400 13.3333px Arial;
+    font-size: 40px;
+    justify-content: center;
+    margin: 15px;
 }
