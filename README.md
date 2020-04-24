@@ -5,4 +5,4 @@ The Classic Rock-Paper-Scissors game
 * JavaScript fundamentals
 * Editing the DOM with JavaScript
 
-## Demo: [live page](https://shantorian.github.io/Rock-Paper-Scissors/)
+## Demo: [live page](https://kelindi.github.io/Rock-Paper-Scissors/)
